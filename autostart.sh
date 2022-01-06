@@ -5,7 +5,7 @@ cat > $SVCFILE << EOM
 Description=Alexa YouTube Chromecast integration
 
 [Service]
-ExecStart=/home/user/alexa-gitlab-yt/alexa-chromecast-yt.py
+ExecStart=$PWD/alexa-chromecast-yt.py
 
 [Install]
 WantedBy=multi-user.target
