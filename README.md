@@ -16,23 +16,24 @@ The TLS key and certificate must be /etc/ssl/alexa/.
 
 ## HTTPS configuration
 
-Amazon requires HTTPS and therefore you need a private key and certificate.
+The Alexa Cloud communicates to this program using HTTPS 
+and therefore you need a private key and certificate.
 Self-signed certificates can be loaded into the Alexa Developer Console.
+You also need to port forward 443 if you are behind a NAT. Sadly, 
+Amazon Alexa Cloud does not support any other port number. 
 
 The certificate MUST have the Subject Alternate Name field specified.
 This essentially is the public domain name of your host.
 The simple OpenSSL commands can't do that for you easily but there is a 
 nice script [here](https://gist.github.com/erik/119dd32efc269d6dd5d7) that can.
 
-Make sure that your REST endpoint and certificate are specified in the 
-[Alexa Developer Console](https://developer.amazon.com/alexa/console/ask/)
+Run this script and follow the instructions.
 
-```sh
-mkdir /etc/ssl/alexa
-mv key.pem /etc/ssl/alexa/key.pem
-mv server.crt /etc/ssl/alexa/server.crt
-cp etc/nginx/sites-enabled/alexa.conf /etc/nginx/sites-eanbled/alexa.conf
-```
+You need to create a basic skill in the
+[Alexa Developer Console](https://developer.amazon.com/alexa/console/ask/).
+Give it whatever name you want.
+Ensure that the file models/intents.json is also uploaded into the developer console.
+Make sure that the REST endpoint and certificate are specified in the developer console.
 
 ## Technical details and TODO list
 
