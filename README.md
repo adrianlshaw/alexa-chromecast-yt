@@ -26,7 +26,6 @@ The certificate MUST have the Subject Alternate Name field specified.
 This essentially is the public domain name of your host.
 The simple OpenSSL commands can't do that for you easily but there is a 
 nice script [here](https://gist.github.com/erik/119dd32efc269d6dd5d7) that can.
-
 Run this script and follow the instructions.
 
 You need to create a basic skill in the
